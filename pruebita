@@ -1,1 +1,27 @@
 hola soy una prueba para el PULL
+
+
+CREATE FUNCTION NombreMes(numero INT) 
+RETURNS VARCHAR(15)
+DETERMINISTIC
+BEGIN
+    DECLARE nombre VARCHAR(15);
+    
+    SET nombre = CASE numero
+        WHEN 1 THEN 'Enero'
+        WHEN 2 THEN 'Febrero'
+        WHEN 3 THEN 'Marzo'
+        WHEN 4 THEN 'Abril'
+        WHEN 5 THEN 'Mayo'
+        WHEN 6 THEN 'Junio'
+        WHEN 7 THEN 'Julio'
+        WHEN 8 THEN 'Agosto'
+        WHEN 9 THEN 'Septiembre'
+        WHEN 10 THEN 'Octubre'
+        WHEN 11 THEN 'Noviembre'
+        WHEN 12 THEN 'Diciembre'
+        ELSE 'Mes inválido'
+    END;
+    
+    RETURN nombre;
+END;
